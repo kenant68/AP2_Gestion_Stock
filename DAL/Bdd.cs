@@ -47,7 +47,102 @@ namespace DAL
             }
         }
 
-        
+
+        //récupérer les pays
+        public static List<BLL.Pays> GetPays()
+        {
+            List<BLL.Pays> res = new List<BLL.Pays>();
+            MySqlCommand cmd = new MySqlCommand();
+            MySqlDataReader dr;
+            cmd.Connection = c;
+            cmd.CommandText = "SELECT * FROM Pays";
+
+            try
+            {
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    BLL.Pays m = new BLL.Pays(dr.GetString(0), dr.GetFloat(1));
+                    res.Add(m);
+                }
+                dr.Close();
+                return res;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        //supprimer les pays
+        public static bool supprimerPays(string id)
+        {
+            MySqlCommand cmd = new MySqlCommand("DELETE FROM Pays WHERE Id = @id", c);
+            cmd.Parameters.AddWithValue("@id", id);
+
+            try
+            {
+                int rows = cmd.ExecuteNonQuery();
+                return rows > 0;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        //ajouter pays
+        public static bool ajouterPays(Pays pays)
+        {
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = c;
+
+            cmd.CommandText = @"INSERT INTO Pays (Id, taux) 
+                        VALUES (@id, @taux)";
+
+            cmd.Parameters.AddWithValue("@id", pays.IdPays);
+            cmd.Parameters.AddWithValue("@taux", pays.taux);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        //mettre à jour pays
+        public static void mettreAJourPays(Pays pays)
+        {
+            using (MySqlCommand cmd = new MySqlCommand())
+            {
+                cmd.Connection = c;
+                cmd.CommandText = @"
+            UPDATE Pays
+            SET taux = @taux
+            WHERE IdPays = @id";
+
+                cmd.Parameters.AddWithValue("@taux", pays.taux);
+                cmd.Parameters.AddWithValue("@id", pays.IdPays);
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    
+                }
+            }
+        }
+
+
+
+
+
 
         //récupération des fabricants
         public static List<Fabricant> GetFabricants()

@@ -46,6 +46,7 @@
     <Compile Include="Categorie.cs" />
     <Compile Include="Depot.cs" />
     <Compile Include="Fabricant.cs" />
+    <Compile Include="Pays.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stock.cs" />
     <Compile Include="Unite.cs" />

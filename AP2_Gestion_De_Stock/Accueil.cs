@@ -272,5 +272,11 @@ namespace AP2_Gestion_De_Stock
             MouvementsStock form7 = new MouvementsStock();
             form7.Show();
         }
+
+        private void paysToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPays form8 = new FormPays();
+            form8.Show();
+        }
     }
 }

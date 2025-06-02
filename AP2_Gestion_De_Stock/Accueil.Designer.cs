@@ -46,6 +46,7 @@
             this.catégoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.unitésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mouvementsDeStocksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.paysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -161,7 +162,8 @@
             this.fabricantsToolStripMenuItem,
             this.catégoriesToolStripMenuItem,
             this.unitésToolStripMenuItem,
-            this.mouvementsDeStocksToolStripMenuItem});
+            this.mouvementsDeStocksToolStripMenuItem,
+            this.paysToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(793, 24);
@@ -209,6 +211,13 @@
             this.mouvementsDeStocksToolStripMenuItem.Size = new System.Drawing.Size(141, 20);
             this.mouvementsDeStocksToolStripMenuItem.Text = "Mouvements de stocks";
             this.mouvementsDeStocksToolStripMenuItem.Click += new System.EventHandler(this.mouvementsDeStocksToolStripMenuItem_Click);
+            // 
+            // paysToolStripMenuItem
+            // 
+            this.paysToolStripMenuItem.Name = "paysToolStripMenuItem";
+            this.paysToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.paysToolStripMenuItem.Text = "Pays";
+            this.paysToolStripMenuItem.Click += new System.EventHandler(this.paysToolStripMenuItem_Click);
             // 
             // Accueil
             // 
@@ -260,6 +269,7 @@
         private System.Windows.Forms.ToolStripMenuItem catégoriesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem unitésToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mouvementsDeStocksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem paysToolStripMenuItem;
     }
 }
 
